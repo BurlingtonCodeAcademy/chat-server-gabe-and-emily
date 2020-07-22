@@ -1,4 +1,5 @@
 import React from "react";
+import Display from "./Display.js"
 
 class Room extends React.Component {
   constructor(props) {
@@ -7,14 +8,18 @@ class Room extends React.Component {
     this.state = {
         user: '',
         message: "",
-        time: ''
+        time: '',
+        newProperty:[]
     };
   }
 
   submitHandler = (evt) => {
     evt.preventDefault();
-    
-  };
+    let arrayOfMessages = this.state.newProperty.concat([{user: this.state.user, message: this.state.message, time: this.state.time}])
+    console.log(arrayOfMessages)
+    }
+
+
 
   handleChange = (evt) => {
       evt.preventDefault();
@@ -45,10 +50,7 @@ class Room extends React.Component {
           <textarea message={this.state.value} onChange={this.messageChange} type="text" id="message" placeholder="message"></textarea>
           <input type="submit" />
         </form>
-        <div id="display">
-          <h3>User: {this.state.user}</h3>
-          <h3>Messages: {this.state.message}</h3>
-        </div>
+        <Display display={this.props.messages}/>
       </>
     );
   }
