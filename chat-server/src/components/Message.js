@@ -5,9 +5,13 @@ class Message extends React.Component {
         super(props)
 
         this.state = {
-
+            user: '',
+            time: '',
+            body: ''
         }
     }
+
+    
 
     render() {
         return(
