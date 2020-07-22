@@ -6,14 +6,14 @@ class Room extends React.Component {
 
     this.state = {
         user: '',
-        message: '',
+        message: "",
         time: ''
     };
   }
 
   submitHandler = (evt) => {
     evt.preventDefault();
-    alert(this.state);
+    
   };
 
   handleChange = (evt) => {
@@ -45,6 +45,10 @@ class Room extends React.Component {
           <textarea message={this.state.value} onChange={this.messageChange} type="text" id="message" placeholder="message"></textarea>
           <input type="submit" />
         </form>
+        <div id="display">
+          <h3>User: {this.state.user}</h3>
+          <h3>Messages: {this.state.message}</h3>
+        </div>
       </>
     );
   }
