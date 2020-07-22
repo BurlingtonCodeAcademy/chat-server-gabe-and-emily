@@ -16,9 +16,12 @@ class Room extends React.Component {
   submitHandler = (evt) => {
     evt.preventDefault();
     let arrayOfMessages = this.state.newProperty.concat([{user: this.state.user, message: this.state.message, time: this.state.time}])
-    console.log(arrayOfMessages)
-    }
-
+    
+    arrayOfMessages.forEach(item =>
+      console.log(item)
+    )
+  
+  }
 
 
   handleChange = (evt) => {
@@ -50,7 +53,7 @@ class Room extends React.Component {
           <textarea message={this.state.value} onChange={this.messageChange} type="text" id="message" placeholder="message"></textarea>
           <input type="submit" />
         </form>
-        <Display display={this.props.messages}/>
+        <div id="display">Messages: </div>
       </>
     );
   }
