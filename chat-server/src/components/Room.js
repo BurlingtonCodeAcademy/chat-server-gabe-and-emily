@@ -28,7 +28,7 @@ class Room extends React.Component {
         msgArray: prevState.msgArray.concat([
           {
             user: userName,
-            message: message,
+            message:message,
             time: time,
           },
         ]),
