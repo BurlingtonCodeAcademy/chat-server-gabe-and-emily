@@ -14,7 +14,7 @@ class House extends React.Component {
         return(
             <>
             <h1>This is the House</h1>
-            <Link to='/room'>Link to Room</Link>
+           
             </>
         )
     }

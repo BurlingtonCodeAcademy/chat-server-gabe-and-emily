@@ -5,6 +5,7 @@ import Message from './components/Message'
 import House from './components/House'
 import Room from './components/Room'
 import Nav from"./components/Nav"
+import Dogs from "./components/Dogs"
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
     
       <Route exact path='/' component={House} />
       <Route path='/room' component={Room} />
+      <Route path='/dogs' component={Dogs} />
       <Route path='/message' component={Message} />
     </Switch>
   

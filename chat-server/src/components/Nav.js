@@ -7,6 +7,7 @@ function Nav(props){
         <nav id="nav">
             <Link to="/">Home</Link>
             <Link to="/room">Room</Link>
+            <Link to="/dogs">Dogs</Link>
         </nav>
         </>
     )
