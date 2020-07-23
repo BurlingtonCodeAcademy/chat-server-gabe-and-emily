@@ -10,7 +10,7 @@ class Display extends React.Component{
     }
 
    
-
+z
     render(){
         return(
             <div id="Display">{this.props.messages}</div>
