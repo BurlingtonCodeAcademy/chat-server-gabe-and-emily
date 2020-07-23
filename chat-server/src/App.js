@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import { Switch, Route } from 'react-router'
-import Message from './components/Message'
 import House from './components/House'
 import Room from './components/Room'
 import Nav from"./components/Nav"
@@ -13,12 +12,13 @@ function App() {
   return (
     <>
     <Nav></Nav>
+    {/* Creates paths for the various components and rooms */}
     <Switch>
     
       <Route exact path='/' component={House} />
       <Route path='/room' component={Room} />
       <Route path='/dogs' component={Dogs} />
-      <Route path='/message' component={Message} />
+    
     </Switch>
   
     </>

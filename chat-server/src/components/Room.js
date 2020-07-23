@@ -1,15 +1,16 @@
 import React from "react";
 import Display from "./Display";
 import "../App.css";
-
+// Declare global variables
 let userName = "";
 let time = "";
 let message = "";
 
+// Creates a class component with state
 class Room extends React.Component {
   constructor(props) {
     super(props);
-
+// The state keeps track of the user, their message, the time and all messages
     this.state = {
       user: "",
       message: "",
@@ -18,6 +19,7 @@ class Room extends React.Component {
     };
   }
 
+  //Handles the submission of the form. Sets the new message into the state
   submitHandler = (evt) => {
     evt.preventDefault();
     this.setState((prevState) => {
@@ -34,9 +36,10 @@ class Room extends React.Component {
         ]),
       };
     });
-    console.log(this.state.msgArray);
+   
   };
 
+  //Updates the username when the user is changed in the form
   handleChange = (evt) => {
     evt.preventDefault();
     let d = new Date();
@@ -44,6 +47,7 @@ class Room extends React.Component {
     time = d.toString();
   };
 
+  //Updates the message when the message is changed in the form
   messageChange = (evt) => {
     evt.preventDefault();
     let d = new Date();
@@ -51,10 +55,12 @@ class Room extends React.Component {
       time = d.toString()
   };
 
+  //Renders the display
   render() {
     return (
       <>
         <h1>This is the Room Page</h1>
+        {/* The message form */}
         <form id="message-form" onSubmit={this.submitHandler}>
           <label htmlFor="user">User:</label>
           <input
@@ -81,5 +87,5 @@ class Room extends React.Component {
     );
   }
 }
-
+// Exports the room so that it can be used in the application
 export default Room;

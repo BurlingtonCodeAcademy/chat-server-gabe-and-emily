@@ -1,23 +1,15 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-class House extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-
-        }
-    }
-
-    render() {
-        return(
-            <>
-            <h1>This is the House</h1>
-           
-            </>
-        )
-    }
+//Creates the tagline and content for the house page
+function House(props) {
+  return (
+    <>
+      <h1>In da House</h1>
+      <h3> Welcome to our glorious chat application. Head over to "Room" for general chat. We love dogs! So head over to dogs to chat all things dogs. </h3>
+    </>
+  );
 }
 
-export default House
+// Exports the house so that it can be used in the application
+export default House;

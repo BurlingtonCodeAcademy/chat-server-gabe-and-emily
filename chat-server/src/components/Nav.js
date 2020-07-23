@@ -1,6 +1,7 @@
 import React from "react"
 import {Link} from "react-router-dom"
 
+// Creates links for the navigation. These are displayed on all pages. 
 function Nav(props){
     return(
         <>

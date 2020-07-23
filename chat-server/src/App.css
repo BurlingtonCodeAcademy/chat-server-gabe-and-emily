@@ -1,23 +1,29 @@
-
-a{
+/* Navigation */
+a {
   text-decoration: none;
   color: blue;
   padding: 10px;
-
 }
 
-a:hover{
+a:hover {
   color: lightblue;
 }
 
-#nav{
-display: flex;
-justify-content:center;
-padding: 10px;
+#nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 
-#message-form{
+/* Message Form */
+
+#message-form {
   display: flex;
   flex-direction: column;
-  width: 20vw
+  width: 20vw;
+  padding-left: 30px;
+}
+
+.name .message .time {
+  padding: 10px;
 }
