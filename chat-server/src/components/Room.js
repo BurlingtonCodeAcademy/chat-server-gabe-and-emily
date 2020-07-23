@@ -1,40 +1,55 @@
 import React from "react";
-import Display from './Display'
-import '../App.css'
+import Display from "./Display";
+import "../App.css";
+
+let userName = "";
+let time = "";
+let message = "";
 
 class Room extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-        user: '',
-        message: "",
-        time: ''
+      user: "",
+      message: "",
+      time: "",
+      msgArray: [],
     };
   }
 
   submitHandler = (evt) => {
     evt.preventDefault();
-    
+    this.setState((prevState) => {
+      return {
+        user: userName,
+        time: time,
+        message: message,
+        msgArray: prevState.msgArray.concat([
+          {
+            user: userName,
+            message: message,
+            time: time,
+          },
+        ]),
+      };
+    });
+    console.log(this.state.msgArray);
   };
 
   handleChange = (evt) => {
-      evt.preventDefault();
-      this.setState({
-            user: (evt.target.value),
-            time: Date.now()
-      })
-      console.log(this.state)
-  }
+    evt.preventDefault();
+    let d = new Date();
+    userName = evt.target.value;
+    time = d.toString();
+  };
 
   messageChange = (evt) => {
-      evt.preventDefault();
-      this.setState ({
-          message: (evt.target.value),
-          time: Date.now()
-      })
-      console.log(this.state)
-  }
+    evt.preventDefault();
+    let d = new Date();
+      message = evt.target.value;
+      time = d.toString()
+  };
 
   render() {
     return (
@@ -42,16 +57,28 @@ class Room extends React.Component {
         <h1>This is the Room Page</h1>
         <form id="message-form" onSubmit={this.submitHandler}>
           <label htmlFor="user">User:</label>
-          <input value={this.state.value} type="text" id="user" placeholder="username" onChange={this.handleChange} />
+          <input
+            value={this.state.value}
+            type="text"
+            id="user"
+            placeholder="username"
+            onChange={this.handleChange}
+          />
           <label htmlFor="message">Message:</label>
-          <textarea message={this.state.value} onChange={this.messageChange} type="text" id="message" placeholder="message"></textarea>
+          <textarea
+            message={this.state.value}
+            onChange={this.messageChange}
+            type="text"
+            id="message"
+            placeholder="message"
+          ></textarea>
           <input type="submit" />
         </form>
-        <div id="display">
-          <h3>User: {this.state.user}</h3>
-          <h3>Messages: {this.state.message}</h3>
-        </div>
-        <Display myMessage={this.state.message} user={}/>
+        <Display
+          myMessage={this.state.message}
+          user={this.state.user}
+          time={this.state.time}
+        />
       </>
     );
   }

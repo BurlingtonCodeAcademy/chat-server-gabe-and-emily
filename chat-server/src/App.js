@@ -4,17 +4,21 @@ import { Switch, Route } from 'react-router'
 import Message from './components/Message'
 import House from './components/House'
 import Room from './components/Room'
+import Nav from"./components/Nav"
 
 function App() {
 
 
   return (
     <>
+    <Nav></Nav>
     <Switch>
+    
       <Route exact path='/' component={House} />
       <Route path='/room' component={Room} />
       <Route path='/message' component={Message} />
     </Switch>
+  
     </>
     );
 }
