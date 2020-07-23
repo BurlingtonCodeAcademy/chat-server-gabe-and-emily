@@ -75,9 +75,7 @@ class Room extends React.Component {
           <input type="submit" />
         </form>
         <Display
-          myMessage={this.state.message}
-          user={this.state.user}
-          time={this.state.time}
+          allMessages={this.state.msgArray}
         />
       </>
     );
