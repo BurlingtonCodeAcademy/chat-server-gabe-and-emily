@@ -10,7 +10,7 @@ function Display(props) {
 class Message extends React.Component{
     render(){
         return(
-        <span>{this.props.message}</span>
+        <span>Message: {this.props.message} sent by user: {}</span>
         )
     }
 }
