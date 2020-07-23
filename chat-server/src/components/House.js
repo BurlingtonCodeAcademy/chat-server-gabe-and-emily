@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class House extends React.Component {
     constructor(props) {
@@ -11,7 +12,10 @@ class House extends React.Component {
 
     render() {
         return(
+            <>
             <h1>This is the House</h1>
+            <Link to='/room'>Link to Room</Link>
+            </>
         )
     }
 }

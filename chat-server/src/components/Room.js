@@ -1,4 +1,6 @@
 import React from "react";
+import Display from './Display'
+import '../App.css'
 
 class Room extends React.Component {
   constructor(props) {
@@ -49,6 +51,7 @@ class Room extends React.Component {
           <h3>User: {this.state.user}</h3>
           <h3>Messages: {this.state.message}</h3>
         </div>
+        <Display myMessage={this.state.message}/>
       </>
     );
   }
